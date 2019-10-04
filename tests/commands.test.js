@@ -173,5 +173,97 @@ describe('Rotation validator works', () => {
 })
 
 describe('Rotates the robot', () => {
+    it('rotates the robot LEFT from NORTH', () => {
+        place(2, 2, 'NORTH');
+        const rotate = left();
+        const expectedPosition = {
+            x: 2,
+            y: 2,
+            f: 'WEST'
+        }
+        expect(rotate).toMatchObject(expectedPosition);
+    });
 
+    it('rotates the robot LEFT from EAST', () => {
+        place(2, 2, 'EAST');
+        const rotate = left();
+        const expectedPosition = {
+            x: 2,
+            y: 2,
+            f: 'NORTH'
+        }
+        expect(rotate).toMatchObject(expectedPosition);
+    });
+
+    it('rotates the robot LEFT from SOUTH', () => {
+        place(2, 2, 'SOUTH');
+        const rotate = left();
+        const expectedPosition = {
+            x: 2,
+            y: 2,
+            f: 'EAST'
+        }
+        expect(rotate).toMatchObject(expectedPosition);
+    });
+
+    it('rotates the robot LEFT from WEST', () => {
+        place(2, 2, 'WEST');
+        const rotate = left();
+        const expectedPosition = {
+            x: 2,
+            y: 2,
+            f: 'SOUTH'
+        }
+        expect(rotate).toMatchObject(expectedPosition);
+    });
+
+
+
+
+
+
+
+    it('rotates the robot RIGHT from NORTH', () => {
+        place(2, 2, 'NORTH');
+        const rotate = right();
+        const expectedPosition = {
+            x: 2,
+            y: 2,
+            f: 'EAST'
+        }
+        expect(rotate).toMatchObject(expectedPosition);
+    });
+
+    it('rotates the robot RIGHT from EAST', () => {
+        place(2, 2, 'EAST');
+        const rotate = right();
+        const expectedPosition = {
+            x: 2,
+            y: 2,
+            f: 'SOUTH'
+        }
+        expect(rotate).toMatchObject(expectedPosition);
+    });
+
+    it('rotates the robot RIGHT from SOUTH', () => {
+        place(2, 2, 'SOUTH');
+        const rotate = right();
+        const expectedPosition = {
+            x: 2,
+            y: 2,
+            f: 'WEST'
+        }
+        expect(rotate).toMatchObject(expectedPosition);
+    });
+
+    it('rotates the robot RIGHT from WEST', () => {
+        place(2, 2, 'WEST');
+        const rotate = right();
+        const expectedPosition = {
+            x: 2,
+            y: 2,
+            f: 'NORTH'
+        }
+        expect(rotate).toMatchObject(expectedPosition);
+    });
 })
