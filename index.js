@@ -58,10 +58,51 @@ const move = () => {
     return toy;
 }
 
+const right = () => {    
+    switch (toy.f){
+        case 'NORTH' :
+            toy.f = 'EAST';
+            break;
+        case 'EAST':
+            toy.f = 'SOUTH';
+            break;
+        case 'SOUTH':
+            toy.f = 'WEST';
+            break;
+        case 'WEST':
+            toy.f = 'NORTH';
+            break;
+    }
+
+    return toy;
+}
+
+const left = () => {
+    switch (toy.f){
+        case 'NORTH' :
+            toy.f = 'WEST';
+            break;
+        case 'EAST':
+            toy.f = 'NORTH';
+            break;
+        case 'SOUTH':
+            toy.f = 'EAST';
+            break;
+        case 'WEST':
+            toy.f = 'SOUTH';
+            break;
+    }
+
+    return toy;
+
+}
+
 module.exports = {
     validateNumber,
     validateDirection,
     clear,
     place,
-    move
+    move,
+    right,
+    left
 }
