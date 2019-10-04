@@ -25,4 +25,36 @@ describe('Places the robot', () => {
 
     })
 
+    it('ignores bad input in x', () => {
+        const placement = place('cat', 2, 'EAST');
+        const expectedPlacemnt = {
+            x : null,
+            y : null,
+            f : null
+        };
+
+        expect(placement).toMatchObject(expectedPlacemnt);
+    })
+
+    it('ignores bad input in y', () => {
+        const placement = place(2, 'toy', 'EAST');
+        const expectedPlacemnt = {
+            x : null,
+            y : null,
+            f : null
+        };
+
+        expect(placement).toMatchObject(expectedPlacemnt);
+    })
+
+    it('ignores bad input in f', () => {
+        const placement = place(1, 2, 'SKY');
+        const expectedPlacemnt = {
+            x : null,
+            y : null,
+            f : null
+        };
+
+        expect(placement).toMatchObject(expectedPlacemnt);
+    })
 })
