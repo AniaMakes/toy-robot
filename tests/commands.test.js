@@ -1,3 +1,21 @@
+const { validateNumber, place } = require('../index')
+
+describe('Number validator works', () =>{
+    it('passes a number that is positive and smaller than 5', () => {
+        expect(validateNumber(3)).toBeTruthy();
+    });
+
+    it('fails a number that is less than 0 and more than 4', () => {
+        expect(validateNumber(7)).toBeFalsy();
+        expect(validateNumber(-2)).toBeFalsy();
+    });
+
+    it('fails not a number', () => {
+        expect(validateNumber('cat')).toBeFalsy();
+    });
+
+})
+
 describe('Places the robot', () => {
 
     it('places the robot on board', () => {
