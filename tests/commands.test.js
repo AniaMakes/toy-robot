@@ -1,4 +1,4 @@
-const { validateNumber, validateDirection, clear, place } = require('../index')
+const { validateNumber, validateDirection, clear, place, move } = require('../index')
 
 describe('Number validator works', () =>{
     it('passes a number that is positive and smaller than 5', () => {
