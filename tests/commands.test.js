@@ -156,3 +156,22 @@ describe('Moves the robot', () =>{
         expect(newPosition).toMatchObject(expectedPosition);
     })
 })
+
+describe('Rotation validator works', () => {
+    it('works for LEFT', () => {
+        expect(validateRotation('LEFT')).toBeTruthy();
+    } );
+
+    it('works for RIGHT', () => {
+        expect(validateRotation('RIGHT')).toBeTruthy();
+    });
+
+    it('does not work for other input', () => {
+        expect(validateRotation('cat')).toBeFalsy();
+        expect(validateRotation(9)).toBeFalsy();
+    })
+})
+
+describe('Rotates the robot', () => {
+
+})
