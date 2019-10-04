@@ -94,3 +94,65 @@ describe('Places the robot', () => {
         expect(placement).toMatchObject(expectedPlacemnt);
     })
 })
+
+describe('Moves the robot', () =>{
+    it('moves the robot N', () => {
+        place(2, 2, 'NORTH');
+        const newPosition = move();
+        const expectedPosition = {
+            x: 2,
+            y: 3,
+            f: 'NORTH'
+        }
+
+        expect(newPosition).toMatchObject(expectedPosition);
+    });
+
+    it('moves the robot E', () => {
+        place(2, 2, 'EAST');
+        const newPosition = move();
+        const expectedPosition = {
+            x: 3,
+            y: 2,
+            f: 'EAST'
+        }
+
+        expect(newPosition).toMatchObject(expectedPosition);
+    });
+
+    it('moves the robot S', () => {
+        place(2, 2, 'SOUTH');
+        const newPosition = move();
+        const expectedPosition = {
+            x: 2,
+            y: 1,
+            f: 'SOUTH'
+        }
+
+        expect(newPosition).toMatchObject(expectedPosition);
+    });
+
+    it('moves the robot W', () => {
+        place(2, 2, 'WEST');
+        const newPosition = move();
+        const expectedPosition = {
+            x: 1,
+            y: 2,
+            f: 'WEST'
+        }
+
+        expect(newPosition).toMatchObject(expectedPosition);
+    });
+
+    it('does not move if robot would fall off the table', () => {
+        place(0, 0, 'SOUTH');
+        const newPosition = move();
+        const expectedPosition = {
+            x: 0,
+            y: 0,
+            f: 'SOUTH'
+        }
+
+        expect(newPosition).toMatchObject(expectedPosition);
+    })
+})
