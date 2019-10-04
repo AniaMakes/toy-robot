@@ -1,0 +1,22 @@
+{
+  "name": "toy-robot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AniaMakes/toy-robot.git"
+  },
+  "author": "AniaMakes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AniaMakes/toy-robot/issues"
+  },
+  "homepage": "https://github.com/AniaMakes/toy-robot#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
