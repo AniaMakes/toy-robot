@@ -1,4 +1,4 @@
-const { validateNumber, validateDirection, clear, place, move, right, left } = require('../index')
+const { validateNumber, validateDirection, clear, place, move, right, left, report } = require('../index')
 
 describe('Number validator works', () =>{
     it('passes a number that is positive and smaller than 5', () => {
@@ -266,4 +266,55 @@ describe('Rotates the robot', () => {
         }
         expect(rotate).toMatchObject(expectedPosition);
     });
+})
+
+describe('Example test 1', () => {
+    it('passes', () => {
+        clear();
+        place(0,0, 'NORTH');
+        move();
+        const position = report();
+        const expectedPosition = {
+            x: 0,
+            y: 1,
+            f: 'NORTH'
+        }
+
+        expect(position).toMatchObject(expectedPosition)
+    })
+})
+
+describe('Example test 2', () => {
+    it('passes', () => {
+        clear();
+        place(0,0, 'NORTH');
+        left();
+        const position = report();
+        const expectedPosition = {
+            x: 0,
+            y: 0,
+            f: 'WEST'
+        }
+
+        expect(position).toMatchObject(expectedPosition)
+    })
+})
+
+describe('Example test 3', () => {
+    it('passes', () => {
+        clear();
+        place(1,2, 'EAST');
+        move();
+        move();
+        left();
+        move();
+        const position = report();
+        const expectedPosition = {
+            x: 3,
+            y: 3,
+            f: 'NORTH'
+        }
+
+        expect(position).toMatchObject(expectedPosition)
+    })
 })

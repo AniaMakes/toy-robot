@@ -97,6 +97,10 @@ const left = () => {
 
 }
 
+const report = () => {
+    return toy
+}
+
 module.exports = {
     validateNumber,
     validateDirection,
@@ -104,5 +108,6 @@ module.exports = {
     place,
     move,
     right,
-    left
+    left,
+    report
 }
