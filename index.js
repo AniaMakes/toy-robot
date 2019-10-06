@@ -17,18 +17,17 @@ const validateDirection = (direction) => {
 }
 
 const validateNumber = (number) => {
-    return Number.isInteger(number) && number >= 0 && number <= 4
+    return Number(number) >= 0 && Number(number) <= 4
 }
 
 const place = (x, y, f) => {
-    if(validateNumber(x) && validateNumber(y) && validateDirection(f)){
+    if(validateNumber(x) && validateNumber(y) && validateDirection(f)){        
         toy = {
-            x: x,
-            y: y,
+            x: Number(x),
+            y: Number(y),
             f: f
         }
     }
-
     return toy;
 }
 
@@ -98,16 +97,50 @@ const left = () => {
 }
 
 const report = () => {
+    const display = document.getElementById("robot-position");
+    display.innerHTML = `${toy.x},${toy.y},${toy.f}`
+
     return toy
 }
 
-module.exports = {
-    validateNumber,
-    validateDirection,
-    clear,
-    place,
-    move,
-    right,
-    left,
-    report
-}
+
+const instruct = (e) => {
+    const input = document.getElementById("instructions");
+    const instructions = input.value;
+    const list = instructions.split(/\n/);
+
+    list.forEach( function(i) {
+        if(i.startsWith("PLACE")){
+            const parts = i.split(" ");
+            const directions = parts[1].split(",");        
+            place(directions[0], directions[1], directions[2]);
+        }
+
+        switch(i){
+            case "MOVE":
+                move();
+                break;
+            case "RIGHT":
+                right();
+                break;
+            case "LEFT":
+                left();
+                break;
+            case "REPORT":
+                report();
+                console.log(report());
+                break;
+        }
+
+    })
+}   
+
+// module.exports = {
+//     validateNumber,
+//     validateDirection,
+//     clear,
+//     place,
+//     move,
+//     right,
+//     left,
+//     report}

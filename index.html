@@ -1,14 +1,16 @@
 <html>
     <body>
-        <form id="form" onsubmit="instruct()">
+        <form id="form">
             <b>Give the little robot some instructions</b>
             <p>
             <textarea id="instructions" rows="10" cols="50"></textarea>
             <p>
-            <input type="submit">
+            <button onclick="instruct()">Submit</button>
         </form>
 
     </body>
 
-    <script type="text/javascript" src="instruct.js"></script>
+    <h3 id="robot-position"></h3>
+
+    <script type="text/javascript" src="index.js"></script>
 </html>
