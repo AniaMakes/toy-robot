@@ -134,13 +134,3 @@ const instruct = (e) => {
 
     })
 }   
-
-// module.exports = {
-//     validateNumber,
-//     validateDirection,
-//     clear,
-//     place,
-//     move,
-//     right,
-//     left,
-//     report}

@@ -1,4 +1,4 @@
-const { validateNumber, validateDirection, clear, place, move, right, left, report } = require('../index')
+// const { validateNumber, validateDirection, clear, place, move, right, left, report } = require('../index')
 
 describe('Number validator works', () =>{
     it('passes a number that is positive and smaller than 5', () => {
@@ -42,7 +42,7 @@ describe('Places the robot', () => {
             f : 'NORTH'
         };
 
-        expect(placement).toMatchObject(expectedPlacemnt);
+        expect(placement).toEqual(expectedPlacemnt);
         }
     )
 
@@ -55,7 +55,7 @@ describe('Places the robot', () => {
             f : null
         };
 
-        expect(placement).toMatchObject(expectedPlacemnt);
+        expect(placement).toEqual(expectedPlacemnt);
 
     })
 
@@ -67,7 +67,7 @@ describe('Places the robot', () => {
             f : null
         };
 
-        expect(placement).toMatchObject(expectedPlacemnt);
+        expect(placement).toEqual(expectedPlacemnt);
     })
 
     it('ignores bad input in y', () => {
@@ -79,7 +79,7 @@ describe('Places the robot', () => {
             f : null
         };
 
-        expect(placement).toMatchObject(expectedPlacemnt);
+        expect(placement).toEqual(expectedPlacemnt);
     })
 
     it('ignores bad input in f', () => {
@@ -91,7 +91,7 @@ describe('Places the robot', () => {
             f : null
         };
 
-        expect(placement).toMatchObject(expectedPlacemnt);
+        expect(placement).toEqual(expectedPlacemnt);
     })
 })
 
@@ -105,7 +105,7 @@ describe('Moves the robot', () =>{
             f: 'NORTH'
         }
 
-        expect(newPosition).toMatchObject(expectedPosition);
+        expect(newPosition).toEqual(expectedPosition);
     });
 
     it('moves the robot E', () => {
@@ -117,7 +117,7 @@ describe('Moves the robot', () =>{
             f: 'EAST'
         }
 
-        expect(newPosition).toMatchObject(expectedPosition);
+        expect(newPosition).toEqual(expectedPosition);
     });
 
     it('moves the robot S', () => {
@@ -129,7 +129,7 @@ describe('Moves the robot', () =>{
             f: 'SOUTH'
         }
 
-        expect(newPosition).toMatchObject(expectedPosition);
+        expect(newPosition).toEqual(expectedPosition);
     });
 
     it('moves the robot W', () => {
@@ -141,7 +141,7 @@ describe('Moves the robot', () =>{
             f: 'WEST'
         }
 
-        expect(newPosition).toMatchObject(expectedPosition);
+        expect(newPosition).toEqual(expectedPosition);
     });
 
     it('does not move if robot would fall off the table', () => {
@@ -153,7 +153,7 @@ describe('Moves the robot', () =>{
             f: 'SOUTH'
         }
 
-        expect(newPosition).toMatchObject(expectedPosition);
+        expect(newPosition).toEqual(expectedPosition);
     })
 })
 
@@ -166,7 +166,7 @@ describe('Rotates the robot', () => {
             y: 2,
             f: 'WEST'
         }
-        expect(rotate).toMatchObject(expectedPosition);
+        expect(rotate).toEqual(expectedPosition);
     });
 
     it('rotates the robot LEFT from EAST', () => {
@@ -177,7 +177,7 @@ describe('Rotates the robot', () => {
             y: 2,
             f: 'NORTH'
         }
-        expect(rotate).toMatchObject(expectedPosition);
+        expect(rotate).toEqual(expectedPosition);
     });
 
     it('rotates the robot LEFT from SOUTH', () => {
@@ -188,7 +188,7 @@ describe('Rotates the robot', () => {
             y: 2,
             f: 'EAST'
         }
-        expect(rotate).toMatchObject(expectedPosition);
+        expect(rotate).toEqual(expectedPosition);
     });
 
     it('rotates the robot LEFT from WEST', () => {
@@ -199,14 +199,8 @@ describe('Rotates the robot', () => {
             y: 2,
             f: 'SOUTH'
         }
-        expect(rotate).toMatchObject(expectedPosition);
+        expect(rotate).toEqual(expectedPosition);
     });
-
-
-
-
-
-
 
     it('rotates the robot RIGHT from NORTH', () => {
         place(2, 2, 'NORTH');
@@ -216,7 +210,7 @@ describe('Rotates the robot', () => {
             y: 2,
             f: 'EAST'
         }
-        expect(rotate).toMatchObject(expectedPosition);
+        expect(rotate).toEqual(expectedPosition);
     });
 
     it('rotates the robot RIGHT from EAST', () => {
@@ -227,7 +221,7 @@ describe('Rotates the robot', () => {
             y: 2,
             f: 'SOUTH'
         }
-        expect(rotate).toMatchObject(expectedPosition);
+        expect(rotate).toEqual(expectedPosition);
     });
 
     it('rotates the robot RIGHT from SOUTH', () => {
@@ -238,7 +232,7 @@ describe('Rotates the robot', () => {
             y: 2,
             f: 'WEST'
         }
-        expect(rotate).toMatchObject(expectedPosition);
+        expect(rotate).toEqual(expectedPosition);
     });
 
     it('rotates the robot RIGHT from WEST', () => {
@@ -249,7 +243,7 @@ describe('Rotates the robot', () => {
             y: 2,
             f: 'NORTH'
         }
-        expect(rotate).toMatchObject(expectedPosition);
+        expect(rotate).toEqual(expectedPosition);
     });
 })
 
@@ -257,15 +251,14 @@ describe('Example test 1', () => {
     it('passes', () => {
         clear();
         place(0,0, 'NORTH');
-        move();
-        const position = report();
+        const position = move();
         const expectedPosition = {
             x: 0,
             y: 1,
             f: 'NORTH'
         }
 
-        expect(position).toMatchObject(expectedPosition)
+        expect(position).toEqual(expectedPosition)
     })
 })
 
@@ -273,15 +266,14 @@ describe('Example test 2', () => {
     it('passes', () => {
         clear();
         place(0,0, 'NORTH');
-        left();
-        const position = report();
+        const position = left();
         const expectedPosition = {
             x: 0,
             y: 0,
             f: 'WEST'
         }
 
-        expect(position).toMatchObject(expectedPosition)
+        expect(position).toEqual(expectedPosition)
     })
 })
 
@@ -292,14 +284,13 @@ describe('Example test 3', () => {
         move();
         move();
         left();
-        move();
-        const position = report();
+        const position = move();
         const expectedPosition = {
             x: 3,
             y: 3,
             f: 'NORTH'
         }
 
-        expect(position).toMatchObject(expectedPosition)
+        expect(position).toEqual(expectedPosition)
     })
 })
