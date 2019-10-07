@@ -98,7 +98,7 @@ const left = () => {
 
 const report = () => {
     const display = document.getElementById("robot-position");
-    display.innerHTML = `${toy.x},${toy.y},${toy.f}`
+    display.innerHTML = `BEEP! BOP! My position is ${toy.x},${toy.y},${toy.f}`
 
     return toy
 }
@@ -128,7 +128,6 @@ const instruct = (e) => {
                 break;
             case "REPORT":
                 report();
-                console.log(report());
                 break;
         }
 

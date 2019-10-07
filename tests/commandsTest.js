@@ -1,5 +1,3 @@
-// const { validateNumber, validateDirection, clear, place, move, right, left, report } = require('../index')
-
 describe('Number validator works', () =>{
     it('passes a number that is positive and smaller than 5', () => {
         expect(validateNumber(3)).toBeTruthy();
