@@ -8,7 +8,8 @@
             <p>LEFT : rotates the robot 90 degrees left</p>
             <p>RIGHT : (you guessed it!) rotates the robot 90 degrees right</p>
             <p>REPORT : reports the current position of the robot on the board</p>
-            <p>Please note that the robot has good memory and will remember its position between submits! If you want it to reset its position to "not on the table", please refresh the page<br>Furthermore, it will only report the last REPORT in a set of directions (so if your directions are MOVE, REPORT, MOVE, REPORT, it will only display the second REPORT value).</p>
+
+            <p>Each instruction needs to be on a new line.<br>Please note that the robot has good memory and will remember its position between submits! If you want it to reset its position to "not on the table", please refresh the page.<br>Furthermore, it will only report the last REPORT in a set of directions (so if your directions are (...) MOVE, REPORT, MOVE, REPORT, it will only display the second REPORT value).</p>
             <p>
             <b>Give the little robot some instructions</b>
             <p>
@@ -16,6 +17,7 @@
             <p>
             <button onclick="instruct()">Submit</button>
     <p>
+        <p id="just-run"></p>
         <h3 id="robot-position"></h3>
     </body>
 

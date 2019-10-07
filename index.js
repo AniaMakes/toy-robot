@@ -98,7 +98,7 @@ const left = () => {
 
 const report = () => {
     const display = document.getElementById("robot-position");
-    display.innerHTML = `BEEP! BOP! My position is ${toy.x},${toy.y},${toy.f}`
+    display.innerHTML = toy.x ? `BEEP! BOP! My position is ${toy.x},${toy.y},${toy.f}` : `BEEP! BOP! UH! OH! I'M NOT ON THE BOARD. USE THE PLACE COMMAND TO PLACE ME ON THE BOARD!`
 
     return toy
 }
@@ -132,4 +132,7 @@ const instruct = (e) => {
         }
 
     })
+
+    const reminder = document.getElementById("just-run");
+    reminder.innerHTML = `You've just run the following set of instructions: ${list.join("; ")}`;
 }   
