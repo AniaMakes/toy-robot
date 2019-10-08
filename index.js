@@ -105,7 +105,7 @@ const report = () => {
 	return toy;
 };
 
-// eslint-disable-next-line
+
 const instruct = (e) => {
 	const input = document.getElementById("instructions");
 	const instructions = input.value;
