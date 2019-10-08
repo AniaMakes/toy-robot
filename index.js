@@ -100,7 +100,7 @@ const left = () => {
 
 const report = () => {
 	const display = document.getElementById("robot-position");
-	display.innerHTML = toy.x ? `BEEP! BOP! My position is ${toy.x},${toy.y},${toy.f}` : "BEEP! BOP! UH! OH! I'M NOT ON THE BOARD. USE THE PLACE COMMAND TO PLACE ME ON THE BOARD!";
+	display.innerHTML = toy.x && `BEEP! BOP! My position is ${toy.x},${toy.y},${toy.f}`;
 
 	return toy;
 };

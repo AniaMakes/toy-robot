@@ -248,7 +248,7 @@ describe("Rotates the robot", () => {
 	});
 });
 
-describe("Example test 1", () => {
+describe("Example from instructions 1", () => {
 	it("passes", () => {
 		clear();
 		place(0,0, "NORTH");
@@ -263,7 +263,7 @@ describe("Example test 1", () => {
 	});
 });
 
-describe("Example test 2", () => {
+describe("Example from instructions 2", () => {
 	it("passes", () => {
 		clear();
 		place(0,0, "NORTH");
@@ -278,7 +278,7 @@ describe("Example test 2", () => {
 	});
 });
 
-describe("Example test 3", () => {
+describe("Example from instructions 3", () => {
 	it("passes", () => {
 		clear();
 		place(1,2, "EAST");
