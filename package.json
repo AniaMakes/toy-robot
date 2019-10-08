@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "lint": "eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,20 @@
     "url": "https://github.com/AniaMakes/toy-robot/issues"
   },
   "homepage": "https://github.com/AniaMakes/toy-robot#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "husky": "^2.4.1",
+    "lint-staged": "^9.4.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint . --fix",
+      "git add"
+    ]
+  }
 }
